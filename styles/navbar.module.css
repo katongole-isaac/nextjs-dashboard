@@ -1,0 +1,73 @@
+/*
+ * Styles for the Sidebar Component
+ * The variable used here are available in /styles/globals.css
+ * 
+*/
+
+.drawer {
+    width: var(--drawer-width);
+    height: var(--drawer-height);
+    background: #fafafa;
+    transition: .4s;
+}
+
+
+.navbarCard {
+    margin-top: 1.2em ;
+}
+
+
+.menuItem {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 3fr;
+    padding: 0.5em 1em;
+    border-radius: 5px ;
+    cursor: pointer;
+}
+
+.menuItem > .label {
+    transition: .4s;
+}
+
+.active {
+    background: #eee;
+    color: #001233 !important;
+}
+
+.menuItem:hover {
+    background-color: #eef0f2 ;
+    color: #6c757d;
+}
+
+.menuItem  {
+    color: #6c757d;
+}
+
+
+ 
+/* --md-breakpoint */
+@media screen  and (max-width: 1000px) {
+
+        .menuItem > .label {
+             width: 0px;
+            overflow: hidden;
+        }
+
+        .navbarCard {
+            display: none;
+        }
+
+        .drawer {
+            width: var(--drawer-min-width);
+        }
+
+        .drawer:hover{
+            width: var(--drawer-width);
+            cursor: pointer;
+        }
+
+        .drawer:hover .menuItem .label {
+            width: auto;
+        }
+}
