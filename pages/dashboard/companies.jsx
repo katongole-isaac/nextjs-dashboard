@@ -98,7 +98,7 @@ const Companies = ({ companiesData }) => {
           <span>These cards are draggable</span>
         </small>
       </PageTitle>
-      <div className="d-flex flex-wrap w-100">
+      <div className="d-flex flex-wrap w-100 justify-content-center">
         {companies.map((company, index) => (
           <CompanyCard
             key={company.id}
