@@ -5,7 +5,7 @@
 
 //  #6C757D
 
-import menuConfig from './sidebar.config'
+import * as menuConfig from './sidebar.config'
 
 const  { DefaultIconColor: defaultIconColor } = menuConfig;
 

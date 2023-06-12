@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import menuConfig from "./sidebar.config";
+import * as menuConfig from "./sidebar.config";
 
 import styles from "../../styles/navbar.module.css";
 

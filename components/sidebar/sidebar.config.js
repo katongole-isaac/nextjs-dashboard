@@ -3,10 +3,10 @@
  *
  */
 
-const ActiveIconColor = "001233";
-const DefaultIconColor = "6C757D";
+ const ActiveIconColor = "001233";
+ const DefaultIconColor = "6C757D";
 
-export default {
+export  {
   ActiveIconColor,
   DefaultIconColor,
 };
