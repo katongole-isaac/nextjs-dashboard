@@ -5,7 +5,7 @@
  The project is avaiable here:  [live demo ]()
 
 ### What I learnt
-* Nextjs Basics
+* __Nextjs Basics__
      * SSR, SSG and Client-side rendering.
      * Routing i.e static and dyanmic routes.
      * Adding static assets i.e css and image files.
