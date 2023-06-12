@@ -28,7 +28,7 @@ const BarGraph = ({ data }) => {
 
   
 
-  return <Bar  data= {...chartConfigs}  />
+  return <Bar data= {...chartConfigs}  />
 };
 
 export default BarGraph;
