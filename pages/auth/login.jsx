@@ -32,6 +32,10 @@ class Login extends Form {
    
   };
 
+  componentDidMount() {
+    localStorage.setItem('user', "nextjs-user");
+  }
+
   render() {
     return (
       <React.Fragment>

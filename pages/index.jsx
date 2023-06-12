@@ -9,8 +9,14 @@ import { useEffect } from "react";
 export default function IndexPage() {
   const router = useRouter();
 
+  
   useEffect(() => {
-    router.push("/dashboard");
+    const user = localStorage.getItem("user");
+    if (!user) {
+      router.push("/auth/login");
+      return;
+    }
+    router.replace("/dashboard");
   });
 
   // Redirects
