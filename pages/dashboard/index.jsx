@@ -54,7 +54,7 @@ export default function Home({ data }) {
     <React.Fragment>
       <PageTitle title={"Dashboard"} />
 
-      <div className="d-flex flex-wrap">
+      <div className="d-flex flex-wrap ">
         {topCards.map((card) => (
           <TopCard key={card.id} {...card} />
         ))}
