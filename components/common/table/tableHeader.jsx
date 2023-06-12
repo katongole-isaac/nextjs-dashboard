@@ -3,8 +3,25 @@
  *
  */
 
+
 const TableHeader = ({ columns, onSort, sortOptions }) => {
+  
   const { path, order } = sortOptions;
+
+  const raiseSort  = (path) => {
+
+    const sortOpt = { ...sortOptions};
+
+    if (path === "") return;
+
+    if (path !== sortOptions.path)
+    sortOpt.path = path;
+
+    else 
+      sortOpt.order = sortOpt.order === "asc" ? "desc" : "asc"
+        
+    onSort(sortOpt);
+  };
 
   return (
     <thead>
@@ -13,7 +30,7 @@ const TableHeader = ({ columns, onSort, sortOptions }) => {
           <th
             key={column.path || column.content.toString()}
             scope="col"
-            onClick={() => onSort(column.path)}
+            onClick={() => raiseSort(column.path)}
             className="clickable"
           >
             {column.title}

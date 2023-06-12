@@ -18,13 +18,12 @@ import { paginate } from "../../lib/paginate";
 import { filter } from "@/lib/filter";
 import sort from "@/lib/sort";
 import http from "@/services/httpService";
+import defaultsUrls from "../../config/defaults.json";
 
-const apiEndpoint = "https://dummyjson.com/users";
-
+const { customersApiEndpoint } = defaultsUrls;
 
 const Customers = ({ data }) => {
   const rows = [5, 6, 7, 10]; // For pagination purposes.
-
 
   const [allUsers, setAllUsers] = useState(data.users);
 
@@ -75,7 +74,7 @@ const Customers = ({ data }) => {
     setAllUsers(users.filter((user) => user.id !== id));
 
     try {
-      await http.delete(`${apiEndpoint}/${id}`);
+      await http.delete(`${customersApiEndpoint}/${id}`);
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         alert("This user has already been deleted");
@@ -93,16 +92,8 @@ const Customers = ({ data }) => {
     setCurrentPage(1);
   };
 
-  const handleSort = (path) => {
-    if (path === "") return;
-
-    if (path !== sortOptions.path)
-      return setSortOptions((prev) => ({ ...prev, path }));
-
-    setSortOptions((prev) => ({
-      ...prev,
-      order: prev.order === "asc" ? "desc" : "asc",
-    }));
+  const handleSort = (sort) => {
+    setSortOptions(sort);
   };
 
   const handleSearchQuery = ({ target }) => {
@@ -190,10 +181,8 @@ export default Customers;
 // For layout purposes.
 Customers.getLayout = (page) => <DashboardLayout> {page} </DashboardLayout>;
 
-export async function getStaticProps() {
-  const { data } = await http.get(apiEndpoint);
-
-  // throw new Error('Something wrong happened');
+export async function getServerSideProps() {
+  const { data } = await http.get(customersApiEndpoint);
 
   return {
     props: { data },

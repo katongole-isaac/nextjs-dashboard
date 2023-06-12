@@ -31,7 +31,6 @@ class AccountForm extends Form {
   });
 
   submitForm = (data) => {
-    console.log(data);
   };
 
   render() {

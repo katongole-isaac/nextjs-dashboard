@@ -41,7 +41,7 @@ const menu = [
     alt: "settings-icon",
   },
   {
-    label: "Login",
+    label: "Logout",
     href: "/auth/login",
     icon: `https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/${defaultIconColor}/external-power-personal-computer-tanah-basah-glyph-tanah-basah.png`,
     alt: "power-off-icon",

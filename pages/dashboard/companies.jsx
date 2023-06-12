@@ -10,8 +10,9 @@ import DashboardLayout from "@/components/dashboard/layout";
 import CompanyCard from "@/components/companies/companyCard";
 
 import http from "@/services/httpService";
+import defaultsUrls from "../../config/defaults.json";
 
-const companyInfoApiEndpoint = "https://api.thecompaniesapi.com/v1/companies";
+const { companyInfoApiEndpoint } = defaultsUrls;
 
 const Companies = ({ companiesData }) => {
   const [companies, setCompanies] = useState([]);
@@ -24,10 +25,8 @@ const Companies = ({ companiesData }) => {
 
   const iconRef = useRef();
 
-
   useEffect(() => {
     setCompanies(companiesData["companies"]);
-
   }, []);
 
   const handleStartDrag = function (e, index) {
@@ -125,7 +124,7 @@ export default Companies;
 
 Companies.getLayout = (page) => <DashboardLayout> {page} </DashboardLayout>;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { data: companiesData } = await http.get(companyInfoApiEndpoint);
 
   return {

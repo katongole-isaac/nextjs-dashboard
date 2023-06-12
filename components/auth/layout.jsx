@@ -6,7 +6,7 @@ import styles from "./layout.module.css";
 
 const Layout = ({ children }) => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid login-layout">
       <div className="container vh-100">
         <div
           className={`row justify-content-center align-items-center ${styles.rowh100}`}

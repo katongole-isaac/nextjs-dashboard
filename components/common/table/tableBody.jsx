@@ -5,7 +5,7 @@
 
 import _ from "lodash";
 
-const TableBody = ({ data, columns, onDelete }) => {
+const TableBody = ({ data, columns }) => {
   return (
     <tbody>
       {data.map((item) => (

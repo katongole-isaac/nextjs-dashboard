@@ -11,6 +11,8 @@ import Head from "next/head";
 
 import Form from "@/components/common/form";
 import Layout from "@/components/auth/layout";
+import { Card, CardBody } from "@/components/common/card";
+import SkipAuthBtn from "@/components/auth/authBtn";
 
 class Login extends Form {
   state = {
@@ -27,7 +29,7 @@ class Login extends Form {
   });
 
   submitForm = (data) => {
-    console.log("data", data);
+   
   };
 
   render() {
@@ -37,18 +39,23 @@ class Login extends Form {
           <title> Login</title>
         </Head>
         <Layout>
-          <div className="header">
-            <h1>Login </h1>
-            <p>
-              Don't have an account?
-              <Link href="/auth/register"> Register </Link>
-            </p>
-          </div>
-          <form>
-            {this.renderInput("email", "Email address")}
-            {this.renderInput("password", "Password", "password")}
-            {this.renderButton("login")}
-          </form>
+          <Card classes="shadow">
+            <CardBody>
+              <div className="header">
+                <h4 className="text-center">Login </h4>
+                <p className="text-center">
+                  Don't have an account?
+                  <Link href="/auth/register"> Register </Link>
+                </p>
+              </div>
+              <form>
+                {this.renderInput("email", "Email address")}
+                {this.renderInput("password", "Password", "password")}
+                {this.renderButton("login")}
+              </form>
+              <SkipAuthBtn />
+            </CardBody>
+          </Card>
         </Layout>
       </React.Fragment>
     );

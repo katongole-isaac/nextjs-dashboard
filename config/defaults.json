@@ -1,0 +1,5 @@
+{
+  "bitcoinApiEndpoint": "https://api.valr.com/v1/public/marketsummary",
+  "companyInfoApiEndpoint" : "https://api.thecompaniesapi.com/v1/companies",
+  "customersApiEndpoint" : "https://dummyjson.com/users"
+}

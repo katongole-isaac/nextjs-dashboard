@@ -8,6 +8,12 @@ import Image from "next/image";
 import Input from "../common/input";
 
 const TopNav = () => {
+
+  
+  const handleChange = () => {
+
+  } 
+
   return (
     <React.Fragment>
       <div
@@ -24,7 +30,7 @@ const TopNav = () => {
                   alt="search--v1"
                 />
               </span>
-              <Input placeholder="Search..." />
+              <Input placeholder="Search..." onChange={handleChange} />
             </div>
           </div>
         </div>
