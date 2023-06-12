@@ -27,7 +27,7 @@ const Companies = ({ companiesData }) => {
 
   useEffect(() => {
     setCompanies(companiesData["companies"]);
-  }, []);
+  }, [companiesData]);
 
   const handleStartDrag = function (e, index) {
     setDragIndex(index);

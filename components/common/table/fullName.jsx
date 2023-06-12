@@ -8,7 +8,11 @@ const FullName = ({ profileImage, firstName, lastName }) => {
   const userName = `${firstName} ${lastName}`;
   return (
     <span className="d-flex align-items-center">
-      <img className="image-wrapper mr-2" src={profileImage} />
+      <img
+        className="image-wrapper mr-2"
+        alt={`${firstName}- ${lastName}`}
+        src={profileImage}
+      />
       <span> {userName} </span>
     </span>
   );
