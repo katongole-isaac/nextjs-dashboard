@@ -2,7 +2,7 @@
 
 * This project is built using Nextjs, Reactjs and bootstrap
  
- The project is avaiable here:  [live demo ]()
+ The project is avaiable here:  [live demo ](https://nextjs-dashboard-7dvy0m0ha-katongole-isaac.vercel.app/dashboard "next dashboard");
 
 ### What I learnt
 * __Nextjs Basics__
